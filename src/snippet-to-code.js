@@ -13,7 +13,7 @@ const snippetToCode = (options) => {
   const templateContent = getFileContent(templateFilePath);
   const snippetsContent = getFileContent(snippetsFilePath);
 
-  const { blocks, extras } = parser.parseSnippets(snippetsContent);
+  const { blocks, extras } = parser.parseSnippet(snippetsContent);
 
   Object.keys(blocks).forEach((key, i) => {
     let code = compile(templateContent, blocks, key);

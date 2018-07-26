@@ -53,7 +53,7 @@ const parser = {
     return parsedBlocks;
   },
 
-  parseSnippets(snippetsContent) {
+  parseSnippet(snippetsContent) {
     let caseBlockTokens = this.tokenCreator(snippetsContent, SNIPPET_CASE_BLOCK_REGEX);
     let extraBlockTokens = this.tokenCreator(snippetsContent, SNIPPET_EXTRA_BLOCK_REGEX);
     let blocks = this.parseBlock(caseBlockTokens, CASE_BLOCK_START);
