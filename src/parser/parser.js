@@ -35,10 +35,16 @@ const parser = {
 
   parseBlock(caseMatches, header) {
     const parsedBlocks = caseMatches.reduce((obj, val, i) => {
+
       let headerLine = removeStrFromFirst(val[0], header);
+
+      val.pop();
+      val.shift();
+      
       obj[i] = {};
       obj[i]['meta'] = this.parseHeaderLine(headerLine);
-      obj[i]['snippet'] = val[1];
+      obj[i]['snippet'] = val.join('\n');
+
       return obj;
     }, {});
     return parsedBlocks;
