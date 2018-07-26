@@ -7,6 +7,7 @@ const EXTRA_BLOCK_START = '/\/\extra-block ';
 const TOKEN_KEY = ['@key ', 'key'];
 const TOKEN_ID = ['@id ', 'id'];
 const TOKEN_DESC = ['@desc ', 'description'];
+const TOKEN_AUTHOR = ['@author', 'author'];
 
 module.exports = {
 	SNIPPET_CASE_BLOCK_REGEX,
@@ -16,4 +17,5 @@ module.exports = {
 	TOKEN_KEY,
 	TOKEN_ID,
 	TOKEN_DESC,
+	TOKEN_AUTHOR
 }

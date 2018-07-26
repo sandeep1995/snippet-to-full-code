@@ -5,7 +5,8 @@ const {
 	EXTRA_BLOCK_START,
 	TOKEN_KEY,
 	TOKEN_ID,
-	TOKEN_DESC
+  TOKEN_DESC,
+  TOKEN_AUTHOR
 } = require('./constants');
 
 const { trimWhiteSpace, removeStrFromFirst } = require('../utils');
@@ -22,9 +23,11 @@ const parser = {
     let tokens = headerLine.split(',');
     let parsedVal = {};
     tokens.forEach(token => {
+      token = trimWhiteSpace(token);
       this.parseEachToken(token, TOKEN_KEY, parsedVal);
       this.parseEachToken(token, TOKEN_ID, parsedVal);
       this.parseEachToken(token, TOKEN_DESC, parsedVal);
+      this.parseEachToken(token, TOKEN_AUTHOR, parsedVal);
     });
     return parsedVal;
   },
